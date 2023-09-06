@@ -26,6 +26,14 @@ final NoteModel note;
 
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
+             Padding(
+              padding: const EdgeInsets.only(right: 20),
+              child: IconButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return EditNote(note: note);
+                },));
+              }, icon: Icon(Icons.edit,size: 30,color: Colors.black,)),
+            ),
             ListTile(
               title: Text(note.title,style: TextStyle(color: Colors.black,fontSize: 28),),
               subtitle: Padding(
